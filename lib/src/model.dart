@@ -72,7 +72,7 @@ class BackgroundModel with ChangeNotifier {
   /// ```
   void image(
       {String? url,
-      String? path,Provider
+      String? path,
       ImageProvider<dynamic>? imageProvider,
       ColorFilter? colorFilter,
       BoxFit? fit,
@@ -107,35 +107,25 @@ class AlignmentModel with ChangeNotifier {
 
   AlignmentGeometry get getAlignment => _alignment;
 
-  void topLeft([bool enable = true]) =>
-      _updateAlignment(Alignment.topLeft, enable);
+  void topLeft([bool enable = true]) => _updateAlignment(Alignment.topLeft, enable);
 
-  void topCenter([bool enable = true]) =>
-      _updateAlignment(Alignment.topCenter, enable);
+  void topCenter([bool enable = true]) => _updateAlignment(Alignment.topCenter, enable);
 
-  void topRight([bool enable = true]) =>
-      _updateAlignment(Alignment.topRight, enable);
+  void topRight([bool enable = true]) => _updateAlignment(Alignment.topRight, enable);
 
-  void bottomLeft([bool enable = true]) =>
-      _updateAlignment(Alignment.bottomLeft, enable);
+  void bottomLeft([bool enable = true]) => _updateAlignment(Alignment.bottomLeft, enable);
 
-  void bottomCenter([bool enable = true]) =>
-      _updateAlignment(Alignment.bottomCenter, enable);
+  void bottomCenter([bool enable = true]) => _updateAlignment(Alignment.bottomCenter, enable);
 
-  void bottomRight([bool enable = true]) =>
-      _updateAlignment(Alignment.bottomRight, enable);
+  void bottomRight([bool enable = true]) => _updateAlignment(Alignment.bottomRight, enable);
 
-  void centerLeft([bool enable = true]) =>
-      _updateAlignment(Alignment.centerLeft, enable);
+  void centerLeft([bool enable = true]) => _updateAlignment(Alignment.centerLeft, enable);
 
-  void center([bool enable = true]) =>
-      _updateAlignment(Alignment.center, enable);
+  void center([bool enable = true]) => _updateAlignment(Alignment.center, enable);
 
-  void centerRight([bool enable = true]) =>
-      _updateAlignment(Alignment.centerRight, enable);
+  void centerRight([bool enable = true]) => _updateAlignment(Alignment.centerRight, enable);
 
-  void coordinate(double x, double y, [bool enable = true]) =>
-      _updateAlignment(Alignment(x, y), enable);
+  void coordinate(double x, double y, [bool enable = true]) => _updateAlignment(Alignment(x, y), enable);
 
   void _updateAlignment(AlignmentGeometry alignment, bool enable) {
     if (enable) {
@@ -157,8 +147,7 @@ class OverflowModel with ChangeNotifier {
 
   // TODO: parameters named or unnamed?
 
-  void hidden([bool enable = true]) =>
-      _updateOverflow(OverflowType.hidden, null, enable);
+  void hidden([bool enable = true]) => _updateOverflow(OverflowType.hidden, null, enable);
 
   void scrollable([Axis direction = Axis.vertical, bool enable = true]) =>
       _updateOverflow(OverflowType.scroll, direction, enable);
@@ -211,22 +200,17 @@ class StyleModel {
 
   void inject(StyleModel? intruder, bool override) {
     alignment = _replace(alignment, intruder?.alignment, override);
-    alignmentContent =
-        _replace(alignmentContent, intruder?.alignmentContent, override);
+    alignmentContent = _replace(alignmentContent, intruder?.alignmentContent, override);
     width = _replace(width, intruder?.width, override);
     minWidth = _replace(minWidth, intruder?.minWidth, override);
     maxWidth = _replace(maxWidth, intruder?.maxWidth, override);
     height = _replace(height, intruder?.height, override);
     minHeight = _replace(minHeight, intruder?.minHeight, override);
     maxHeight = _replace(maxHeight, intruder?.maxHeight, override);
-    backgroundColor =
-        _replace(backgroundColor, intruder?.backgroundColor, override);
-    backgroundBlur =
-        _replace(backgroundBlur, intruder?.backgroundBlur, override);
-    backgroundImage =
-        _replace(backgroundImage, intruder?.backgroundImage, override);
-    backgroundBlendMode =
-        _replace(backgroundBlendMode, intruder?.backgroundBlendMode, override);
+    backgroundColor = _replace(backgroundColor, intruder?.backgroundColor, override);
+    backgroundBlur = _replace(backgroundBlur, intruder?.backgroundBlur, override);
+    backgroundImage = _replace(backgroundImage, intruder?.backgroundImage, override);
+    backgroundBlendMode = _replace(backgroundBlendMode, intruder?.backgroundBlendMode, override);
     padding = _replace(padding, intruder?.padding, override);
     margin = _replace(margin, intruder?.margin, override);
     gradient = _replace(gradient, intruder?.gradient, override);
@@ -242,8 +226,7 @@ class StyleModel {
     ripple = _replace(ripple, intruder?.ripple, override);
     opacity = _replace(opacity, intruder?.opacity, override);
     overflow = _replace(overflow, intruder?.overflow, override);
-    overflowDirection =
-        _replace(overflowDirection, intruder?.overflowDirection, override);
+    overflowDirection = _replace(overflowDirection, intruder?.overflowDirection, override);
     // gesture = _replace(gesture, intruder?.gesture, override);
   }
 
@@ -267,8 +250,7 @@ class StyleModel {
       );
     }
     boxConstraints = (width != null || height != null)
-        ? boxConstraints?.tighten(width: width, height: height) ??
-            BoxConstraints.tightFor(width: width, height: height)
+        ? boxConstraints?.tighten(width: width, height: height) ?? BoxConstraints.tightFor(width: width, height: height)
         : boxConstraints;
 
     return boxConstraints;
@@ -314,11 +296,9 @@ class StyleModel {
     return null;
   }
 
-  set setBoxDecoration(BoxDecoration? boxDecoration) =>
-      _decoration = boxDecoration;
+  set setBoxDecoration(BoxDecoration? boxDecoration) => _decoration = boxDecoration;
 
-  set setBoxConstraints(BoxConstraints? boxConstraints) =>
-      _constraints = boxConstraints;
+  set setBoxConstraints(BoxConstraints? boxConstraints) => _constraints = boxConstraints;
 
   set setTransform(Matrix4? transform) => _transform = transform;
 }
@@ -453,15 +433,13 @@ class TextModel {
     textAlign = _replace(textAlign, textModel?.textAlign, override);
     fontStyle = _replace(fontStyle, textModel?.fontStyle, override);
     fontFamily = _replace(fontFamily, textModel?.fontFamily, override);
-    fontFamilyFallback =
-        _replace(fontFamilyFallback, textModel?.fontFamilyFallback, override);
+    fontFamilyFallback = _replace(fontFamilyFallback, textModel?.fontFamilyFallback, override);
     fontSize = _replace(fontSize, textModel?.fontSize, override);
     textColor = _replace(textColor, textModel?.textColor, override);
     maxLines = _replace(maxLines, textModel?.maxLines, override);
     letterSpacing = _replace(letterSpacing, textModel?.letterSpacing, override);
     wordSpacing = _replace(wordSpacing, textModel?.wordSpacing, override);
-    textDecoration =
-        _replace(textDecoration, textModel?.textDecoration, override);
+    textDecoration = _replace(textDecoration, textModel?.textDecoration, override);
     textDirection = _replace(textDirection, textModel?.textDirection, override);
     textShadow = _replace(textShadow, textModel?.textShadow, override);
 
@@ -469,10 +447,8 @@ class TextModel {
     keyboardType = _replace(keyboardType, textModel?.keyboardType, override);
     onChange = _replace(onChange, textModel?.onChange, override);
     onFocusChange = _replace(onFocusChange, textModel?.onFocusChange, override);
-    onSelectionChanged =
-        _replace(onSelectionChanged, textModel?.onSelectionChanged, override);
-    onEditingComplete =
-        _replace(onEditingComplete, textModel?.onEditingComplete, override);
+    onSelectionChanged = _replace(onSelectionChanged, textModel?.onSelectionChanged, override);
+    onEditingComplete = _replace(onEditingComplete, textModel?.onEditingComplete, override);
     focusNode = _replace(focusNode, textModel?.focusNode, override);
     autoFocus = _replace(autoFocus, textModel?.autoFocus, override);
     textOverflow = _replace(textOverflow, textModel?.textOverflow, override);
@@ -510,11 +486,9 @@ class TextAlignModel with ChangeNotifier {
 
   void right([bool enable = true]) => _updateAlignment(TextAlign.right, enable);
 
-  void center([bool enable = true]) =>
-      _updateAlignment(TextAlign.center, enable);
+  void center([bool enable = true]) => _updateAlignment(TextAlign.center, enable);
 
-  void justify([bool enable = true]) =>
-      _updateAlignment(TextAlign.justify, enable);
+  void justify([bool enable = true]) => _updateAlignment(TextAlign.justify, enable);
 
   void start([bool enable = true]) => _updateAlignment(TextAlign.start, enable);
 
